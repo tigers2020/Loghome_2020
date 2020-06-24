@@ -1,0 +1,20 @@
+/*
+ * MDBootstrap Admin
+ * Learn more: https://mdbootstrap.com/docs/tools/ecommerce/
+ * About MDBootstrap: https://mdbootstrap.com/
+ * 24.04.2020
+ */
+
+ // ecommerce core
+ @import "../../ecommerce/scss/module";
+
+ @import "./plugins/mdb-vector-map";
+ @import "./plugins/full-calendar";
+ @import "./plugins/wysiwyg";
+
+ @import "../../scss/addons/datatables2";
+ @import "../../scss/addons/datatables-select2";
+
+ @import "../../scss/addons/_flag.scss";
+ 
+ @import "module";

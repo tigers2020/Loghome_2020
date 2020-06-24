@@ -1,0 +1,62 @@
+{% extends 'base/index.html' %}
+
+{% block main %}
+    <div class="jumbotron-fluid alert-success">
+        <div class="jumbotron">
+            <h2 class="display-4">Thank you!</h2>
+            <p class="lead">Your message has been successfully sent, We will contact you very
+                            soon!</p>
+{#            <hr class="my-4">#}
+{#            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>#}
+{#            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>#}
+        </div>
+    </div>
+    <section class="contact-section py-5">
+        <div class="card">
+            <div class="row">
+                <div class="col-md-7 ">
+
+                    <div class="alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="h4-responsive font-weight-bold">Thank you</h4>
+                        <h5 class="h5-responsive">Your message has been successfully sent, We will contact you very
+                            soon!</h5>
+
+                    </div>
+
+                </div>
+                <div class="col-md-5">
+                    <div class="contact text-center white-text pb-3 m-4">
+                        <h3 class="my-4 pb-2 pt-4">Contact Information</h3>
+                        <ul class="text-lg-left list-unstyled ml-4">
+                            <li>
+                                <p><i class="fas fa-map-marker-alt pr-2"></i> 6639 Pleasant Valley Rd <br/>Friendship NY
+                                    14739
+                                </p>
+                            </li>
+                            <li>
+                                <p>Robert Mack</p>
+                                <p><i class="fas fa-phone pr-2"></i>+ 01 585 307 0444</p>
+                            </li>
+                            <li>
+                                <p><i class="fas fa-envelope pr-2"></i>callbobmack@live.com</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+{% endblock %}
+
+{% block javascript %}
+    <script type="text/javascript">
+        $(document).ready(function () {
+            new WOW().init();
+
+        });
+    </script>
+{% endblock %}

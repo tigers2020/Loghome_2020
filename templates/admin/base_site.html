@@ -1,0 +1,18 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('Django site admi4n') }}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('Django administrati44on') }}</a></h1>
+{% endblock %}
+{% block extrastyle %}
+    <link rel="stylesheet" type="text/css" href="{% static 'admin/css/mdb.admin.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'admin/css/mdb.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'admin/css/bootstrap.min.css' %}">
+    <script type="text/javascript" href="{% static 'admin/js/mdb.min.js' %}"></script>
+    <script type="text/javascript" href="{% static 'admin/js/mdb.admin.min.js' %}"></script>
+    <script type="text/javascript" href="{% static 'admin/js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" href="{% static 'admin/js/jquery.min.js' %}"></script>
+{% endblock %}
+{% block nav-global %}{% endblock %}

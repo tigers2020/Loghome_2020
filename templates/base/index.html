@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+{% include 'base/head.html' %}
+
+<body>
+
+{% include 'base/navigator.html' %}
+
+<main class="lighten-2 grey mt-5 py-5">
+    <section>
+        <div class="container-fluid ">
+
+                    {% block main %}
+                        Main View
+
+                    {% endblock %}
+        </div>
+    </section>
+</main>
+
+{% include 'base/footer.html' %}
+
+</body>
+
+</html>
