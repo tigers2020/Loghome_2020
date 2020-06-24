@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Material Design Bootstrap</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="../../img/mdb-favicon.ico" type="image/x-icon">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="../../css/mdb.min.css">
+  <!-- Admin styles -->
+  <link rel="stylesheet" href="../../css/mdb.admin.min.css">
+  <!-- Your custom styles (optional) -->
+  <style>
+    .skin-light .register-form, 
+    .skin-light .logout-form {
+      max-width: 30rem;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  
+    .skin-light .logout-form {
+      display: none;
+    }
+  
+    .skin-light .register-form .form-check {
+      padding-left: 0;
+    }
+  
+    .skin-light .md-form.md-outline .form-control.is-valid, 
+    .skin-light .md-form.md-outline .form-control.is-invalid {
+      background-position: right calc(.375em + .1875rem) center !important;
+    }
+  </style>
+</head>
+
+<body class="skin-light hidden-sn">
+
+  <!-- Navigation -->
+  <header>
+
+    <!-- Sidenav  -->
+    <div id="slide-out" class="side-nav">
+      <ul class="custom-scrollbar">
+        <!-- Logo -->
+        <li>
+          <div class="logo-wrapper waves-light waves-effect waves-light">
+            <a class="navbar-brand d-flex justify-content-center align-items-center dark-blue-text"
+              href="https://mdbootstrap.com/docs/jquery/admin/" target="_blank">
+              <img id="MDB-logo"
+                src="https://mdbootstrap.com/wp-content/uploads/2018/06/logo-mdb-jquery-small.png"
+                alt="MDB Logo">
+            </a>
+          </div>
+        </li>
+        <!-- Logo -->
+        <!-- Search Form -->
+        <li>
+          <form class="search-form" role="search">
+            <div class="form-group md-form mt-0 mb-1 d-block">
+              <input type="text" class="form-control w-100" placeholder="Search">
+            </div>
+          </form>
+        </li>
+        <!-- Search Form -->
+        <!-- Side navigation links -->
+        <li>
+          <ul class="collapsible collapsible-accordion">
+            <!-- Single item -->
+            <li>
+              <a href="../../demo.html"
+                class="collapsible-header navbar-link-2 waves-effect arrow-r d-flex align-items-center"><i
+                  class="fas fa-cubes dark-blue-text"></i> Components
+              </a>
+            </li>
+            <!-- Single item -->
+            <!-- Single item -->
+            <li>
+              <a href="../dashboards & pages/dashboard-traffic.html"
+                class="collapsible-header navbar-link-2 waves-effect arrow-r d-flex align-items-center"><i
+                  class="fas fa-chart-area dark-blue-text"></i> Traffic dashboard
+              </a>
+            </li>
+            <!-- Single item -->
+            <!-- Single item -->
+            <li>
+              <a href="../dashboards & pages/dashboard-traffic.html"
+                class="collapsible-header navbar-link-2 waves-effect arrow-r d-flex align-items-center"><i
+                  class="fas fa-chart-pie dark-blue-text"></i> Sales dashboard
+              </a>
+            </li>
+            <!-- Single item -->
+            <!-- Single item -->
+            <li>
+              <a href="login.html"
+                class="collapsible-header navbar-link-2 waves-effect arrow-r d-flex align-items-center"><i
+                  class="fas fa-sign-in-alt dark-blue-text"></i> Login
+              </a>
+            </li>
+            <!-- Single item -->
+            <!-- Single item -->
+            <li>
+              <a href="register.html"
+                class="collapsible-header navbar-link-2 waves-effect arrow-r d-flex align-items-center"><i
+                  class="fas fa-user dark-blue-text"></i> Register
+              </a>
+            </li>
+            <!-- Single item -->
+            <!-- Single item -->
+            <li>
+              <a href="request.html"
+                class="collapsible-header navbar-link-2 waves-effect arrow-r d-flex align-items-center"><i
+                  class="fas fa-lock dark-blue-text"></i> Request password
+              </a>
+            </li>
+            <!-- Single item -->
+            <!-- Single item -->
+            <li>
+              <a href="reset.html"
+                class="collapsible-header navbar-link-2 waves-effect arrow-r d-flex align-items-center"><i
+                  class="fas fa-key dark-blue-text"></i> Reset password
+              </a>
+            </li>
+            <!-- Single item -->
+          </ul>
+        </li>
+        <!-- Side navigation links -->
+      </ul>
+    </div>
+    <!-- Sidenav -->
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top double-nav scrolling-navbar">
+      <div class="container-fluid">
+
+        <!-- Brand -->
+        <a class="navbar-brand" href="dashboard-traffic.html">
+          <i class="fab fa-mdb fa-3x" alt="mdb logo"></i>
+        </a>
+
+        <div class="float-left">
+          <a href="#" data-activates="slide-out" class="button-collapse"><i class="fas fa-bars"></i></a>
+        </div>
+
+        <!-- Right -->
+        <ul class="navbar-nav nav-flex-icons ml-auto">
+          <li class="nav-item d-none d-md-inline-block">
+            <a href="https://mdbootstrap.com/docs/jquery/admin/getting-started/download-quick-start/"
+              class="nav-link waves-effect" target="_blank">
+              Docs
+            </a>
+          </li>
+          <li class="nav-item d-none d-md-inline-block">
+            <a href="https://mdbootstrap.com/docs/jquery/admin/services/" class="nav-link waves-effect" target="_blank">
+              Support
+            </a>
+          </li>
+          <li class="nav-item d-none d-md-inline-block">
+            <a href="https://mdbootstrap.com/docs/jquery/admin/contact/" class="nav-link waves-effect" target="_blank">
+              Contact
+            </a>
+          </li>
+          <li class="nav-item pl-2">
+            <a href="https://mdbootstrap.com/products/jquery-admin-ui-kit/" type="button"
+              class="btn btn-outline-primary btn-md btn-rounded btn-navbar waves-effect waves-light" target="_blank">Buy
+              Admin UI Kit</a>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+    <!-- Navbar -->
+
+    <div class="jumbotron color-grey-light mt-70">
+      <div class="d-flex align-items-center h-100">
+        <div class="container text-center py-5">
+          <h3 class="mb-0">Sign up</h3>
+        </div>
+      </div>
+    </div>
+
+  </header>
+  <!-- Navigation -->
+
+  <!--Main layout-->
+  <main class="pt-0">
+    <div class="container">
+
+      <!--Grid row-->
+      <div class="row d-flex justify-content-center">
+
+        <!--Grid column-->
+        <div class="col-md-6">
+
+          <!--Section: Register Form-->
+          <section class="mt-4 mb-5 register-form">
+
+            <form class="needs-validation" novalidate autocomplete="off">
+
+              <div class="form-row">
+                <div class="col">
+                  <div class="md-form md-outline mt-0">
+                    <input type="text" name="register-first-name" id="register-first-name" class="form-control">
+                    <label for="register-first-name">First name</label>
+                    <div class="invalid-feedback">
+                      First name should contain from 4 to 50 characters
+                    </div>       
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="md-form md-outline mt-0">
+                    <input type="text" name="register-last-name" id="register-last-name" class="form-control">
+                    <label for="register-last-name">Last name</label>
+                    <div class="invalid-feedback">
+                      Last name should contain from 4 to 50 characters
+                    </div>        
+                  </div>
+                </div>
+              </div>
+
+              <div class="md-form md-outline mt-0">
+                <input type="email" name="register-email" id="register-email" class="form-control">
+                <label data-error="wrong" data-success="right" for="register-email">Your email</label>
+              </div>
+              <div class="md-form md-outline mt-0 mb-2">
+                <input type="password" name="register-password" id="register-password" class="form-control">
+                <label data-error="wrong" data-success="right" for="register-password">Your password</label>
+                <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted">
+                  At least 6 characters
+                </small>
+              </div>
+              <div class="md-form md-outline mt-0">
+                <input type="password" name="register-password-confirm" id="register-password-confirm" class="form-control">
+                <label data-error="wrong" data-success="right" for="register-password-confirm">Confirm password</label>
+                <div class="invalid-feedback">
+                  Password confirmation is invalid
+                </div>
+              </div>
+
+              <div class="md-form md-outline">
+                <input type="number" name="register-phone" id="register-phone" class="form-control"
+                  aria-describedby="register-phoneHelpBlock">
+                <label for="register-phone">Phone number</label>
+                <small id="register-phoneHelpBlock" class="form-text text-muted mb-3">
+                  Optional - for two step authentication
+                </small>
+              </div>
+
+              <div class="text-center pb-2">
+
+                <div class="form-check pl-0 mb-3">
+                  <input type="checkbox" class="form-check-input filled-in" id="new1">
+                  <label class="form-check-label small text-uppercase card-link-secondary" for="new1">Subscribe to our
+                    newsletter</label>
+                </div>
+
+              </div>
+
+              <div class="text-center mb-2">
+
+                <button type="submit" class="btn btn-primary mb-4">Sign Up</button>
+
+                <p>or sign up with:</p>
+
+                <a type="button" class="btn-floating btn-fb btn-sm mr-1">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a type="button" class="btn-floating btn-tw btn-sm mr-1">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a type="button" class="btn-floating btn-li btn-sm mr-1">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a type="button" class="btn-floating btn-git btn-sm">
+                  <i class="fab fa-github"></i>
+                </a>
+
+                <hr class="mt-4">
+
+                <p>By clicking
+                  <em>Sign up</em> you agree to our
+                  <a href="#" data-toggle="modal" data-target="#terms-modal">terms of service</a>
+                </p>
+
+              </form>
+
+            </div>
+
+          </section>
+          <!--Section: Register Form-->
+
+          <!--Section: Logout Form-->
+          <section class="logout-form py-5 text-center">
+            <p class="logged-user-message pb-2"></p>
+            <a href="login.html" class="btn btn-primary waves-effect">Log in</a>
+            <button class="btn btn-danger waves-effect delete-user">Remove user account</button>
+          </section>
+          <!--Section: Logout Form-->
+
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+    
+    </div>
+  </main>
+  <!--Main layout-->
+
+  <!-- Modal -->
+  <div class="modal fade" id="terms-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Terms & Conditions</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Your data will be saved in localStorage and kept only for the purposes of demonstration pages.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+
+  <!-- Footer -->
+  <footer class="page-footer font-small elegant-color">
+
+    <div class="color-primary">
+      <div class="container">
+
+        <!-- Grid row-->
+        <div class="row py-4 d-flex align-items-center">
+
+          <!-- Grid column -->
+          <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+            <h6 class="mb-0">Get connected with us on social networks!</h6>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+            <!-- Facebook -->
+            <a class="fb-ic">
+              <i class="fab fa-facebook-f white-text mr-4"> </i>
+            </a>
+            <!-- Twitter -->
+            <a class="tw-ic">
+              <i class="fab fa-twitter white-text mr-4"> </i>
+            </a>
+            <!-- Google +-->
+            <a class="gplus-ic">
+              <i class="fab fa-google-plus-g white-text mr-4"> </i>
+            </a>
+            <!--Linkedin -->
+            <a class="li-ic">
+              <i class="fab fa-linkedin-in white-text mr-4"> </i>
+            </a>
+            <!--Instagram-->
+            <a class="ins-ic">
+              <i class="fab fa-instagram white-text"> </i>
+            </a>
+
+          </div>
+          <!-- Grid column -->
+
+        </div>
+        <!-- Grid row-->
+
+      </div>
+    </div>
+
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left pt-4 pt-md-5">
+
+      <!-- Grid row -->
+      <div class="row mt-1 mt-md-0 mb-4 mb-md-0">
+
+        <!-- Grid column -->
+        <div class="col-md-3 mx-auto mt-3 mt-md-0 mb-0 mb-md-4">
+
+          <!-- Links -->
+          <h5>About me</h5>
+          <hr class="color-primary mb-4 mt-0 d-inline-block mx-auto w-60">
+
+          <p class="foot-desc mb-0">Here you can use rows and columns to organize your footer content. Lorem
+            ipsum dolor sit amet,
+            consectetur
+            adipisicing elit.</p>
+
+        </div>
+        <!-- Grid column -->
+
+        <hr class="clearfix w-100 d-md-none">
+
+        <!-- Grid column -->
+        <div class="col-md-3 mx-auto mt-3 mt-md-0 mb-0 mb-md-4">
+
+          <!-- Links -->
+          <h5>Products</h5>
+          <hr class="color-primary mb-4 mt-0 d-inline-block mx-auto w-60">
+
+          <ul class="list-unstyled foot-desc">
+            <li class="mb-2">
+              <a href="#!">MDBootstrap</a>
+            </li>
+            <li class="mb-2">
+              <a href="#!">MDWordPress</a>
+            </li>
+            <li class="mb-2">
+              <a href="#!">BrandFlow</a>
+            </li>
+            <li class="mb-2">
+              <a href="#!">Bootstrap Angular</a>
+            </li>
+          </ul>
+
+        </div>
+        <!-- Grid column -->
+
+        <hr class="clearfix w-100 d-md-none">
+
+        <!-- Grid column -->
+        <div class="col-md-3 mx-auto mt-3 mt-md-0 mb-0 mb-md-4">
+
+          <!-- Links -->
+          <h5>Useful links</h5>
+          <hr class="color-primary mb-4 mt-0 d-inline-block mx-auto w-60">
+
+          <ul class="list-unstyled foot-desc">
+            <li class="mb-2">
+              <a href="#!">Your Account</a>
+            </li>
+            <li class="mb-2">
+              <a href="#!">Become an Affiliate</a>
+            </li>
+            <li class="mb-2">
+              <a href="#!">Shipping Rates</a>
+            </li>
+            <li class="mb-2">
+              <a href="#!">Help</a>
+            </li>
+          </ul>
+
+        </div>
+        <!-- Grid column -->
+
+        <hr class="clearfix w-100 d-md-none">
+
+        <!-- Grid column -->
+        <div class="col-md-3 mx-auto mt-3 mt-md-0 mb-0 mb-md-4">
+
+          <!-- Links -->
+          <h5>Contacts</h5>
+          <hr class="color-primary mb-4 mt-0 d-inline-block mx-auto w-60">
+
+          <ul class="fa-ul foot-desc ml-4">
+            <li class="mb-2"><span class="fa-li"><i class="far fa-map"></i></span>New York, Avenue Street 10
+            </li>
+            <li class="mb-2"><span class="fa-li"><i class="fas fa-phone-alt"></i></span>042 876 836 908</li>
+            <li class="mb-2"><span class="fa-li"><i class="far fa-envelope"></i></span>company@example.com</li>
+            <li><span class="fa-li"><i class="far fa-clock"></i></span>Monday - Friday: 10-17</li>
+          </ul>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+    </div>
+    <!-- Footer Links -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+      <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+  <!-- Footer -->
+
+  <!-- SCRIPTS -->
+  <!-- jQuery -->
+  <script type="text/javascript" src="../../js/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="../../js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="../../js/mdb.min.js"></script>
+  <!-- MDB Admin -->
+  <script type="text/javascript" src="../../js/mdb.admin.min.js"></script>
+
+  <!-- Your custom scripts (optional) -->
+  <script type="text/javascript">
+  
+    $(document).ready(function () {
+      // SideNav Button Initialization
+      $(".button-collapse").sideNav();
+      // SideNav Scrollbar Initialization
+      var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+      var ps = new PerfectScrollbar(sideNavScrollbar);
+    });
+
+    $(document).ready(function() {
+      function validateFirstName() {
+        const $input = $('#register-first-name')
+        if ($input[0].value.length >= 4 && $input[0].value.length <= 50) {
+          $input.removeClass('is-invalid').addClass('is-valid');
+          return true;
+        }
+        $input.removeClass('is-valid').addClass('is-invalid');
+        return false;
+      }
+
+      function validateLastName() {
+        const $input = $('#register-last-name')
+        if ($input[0].value.length >= 4 && $input[0].value.length <= 50) {
+          $input.removeClass('is-invalid').addClass('is-valid');
+          return true;
+        }
+        $input.removeClass('is-valid').addClass('is-invalid');
+        return false;
+      }
+
+      function validateEmail() {
+        const $input = $('#register-email')
+        if ($input[0].value.length >= 3 && $input[0].value.includes('@')) {
+          $input.removeClass('is-invalid').addClass('is-valid');
+          return true;
+        }
+        $input.removeClass('is-valid').addClass('is-invalid');
+        return false;
+      }
+
+      function validatePassword() {
+        const $input = $('#register-password')
+        if ($input[0].value.length >= 6) {
+          $input.removeClass('is-invalid').addClass('is-valid');
+          return true;
+        }
+        $input.removeClass('is-valid').addClass('is-invalid');
+        return false;
+      }
+
+      function validatePasswordConfirm() {
+        const $input = $('#register-password');
+        const $inputConfirm = $('#register-password-confirm');
+        if ($inputConfirm[0].value === $input[0].value && $inputConfirm[0].value.length >= 6) {
+          $inputConfirm.removeClass('is-invalid').addClass('is-valid');
+          return true;
+        }
+        $inputConfirm.removeClass('is-valid').addClass('is-invalid');
+        return false;
+      }
+
+      function validateForms() {
+        validateFirstName();
+        validateLastName();
+        validateEmail();
+        validatePassword();
+        validatePasswordConfirm();
+      }
+
+      $('#register-first-name').on('input', function() {
+        validateFirstName();
+      })
+
+      $('#register-last-name').on('input', function() {
+        validateLastName();
+      })
+
+      $('#register-email').on('input', function() {
+        validateEmail();
+      })
+
+      $('#register-password').on('input', function() {
+        validatePassword();
+        $('#register-password-confirm')[0].value = '';
+      })
+
+      $('#register-password-confirm').on('input', function() {
+        validatePasswordConfirm();
+      })
+
+      $('.register-form form').on('submit', function(event) {
+        event.preventDefault();
+        validateForms();
+
+        if (validateFirstName() === true && validateLastName() === true && validateEmail() === true && validatePassword() === true && validatePasswordConfirm() === true) {
+          const userData = $(this).serializeArray();
+
+          localStorage.setItem("mdbAdminUserFirstName", userData[0].value);
+          localStorage.setItem("mdbAdminUserLastName", userData[1].value);
+          localStorage.setItem("mdbAdminUserEmail", userData[2].value);
+          localStorage.setItem("mdbAdminUserPass", userData[3].value);
+          location.reload();
+        }
+      })
+
+      $('.delete-user').on('click', () => {
+        localStorage.clear();
+        location.reload();
+      })
+
+      if (localStorage.mdbAdminUserEmail) {
+        $('.register-form').hide();
+        $('.logout-form').show();
+        $('.logged-user-message').html(`You have been registered as <strong>${localStorage.mdbAdminUserFirstName} ${localStorage.mdbAdminUserLastName}</strong>!`);
+      }
+
+    })
+  
+  </script>
+
+</body>
+
+</html>
