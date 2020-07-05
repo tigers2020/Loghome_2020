@@ -6,14 +6,158 @@
 
 {% include 'base/navigator.html' %}
 
-<main class="lighten-2 grey mt-5 py-5">
+<main class="lighten-2 grey mt-3 py-5">
     <section>
-        <div class="container-fluid ">
+        <div class="container-fluid">
 
-                    {% block main %}
-                        Main View
+            {% block main %}
+                <div class="container">
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            {% for image in images %}
+                                <div class="carousel-item {% if forloop.first %}active{% endif %}"
+                                     style="height: 500px">
+                                    <img class="d-block w-100" src="{{ image.image.url }}" alt="{{ image.image.title }}"
+                                         />
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
+                           data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button"
+                           data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-12 mt-5">
+                            <div class="card">
+                                <div class="container">
+                                    <h2 class="h2-responsive">
+                                        {{ welcome.title }}
+                                    </h2>
+                                    <p>
+                                        <{{ welcome.content|safe }}
+                                    </p>
+                                </div>
+                            </div>
 
-                    {% endblock %}
+                        </div>
+                        <!-- Main listing -->
+
+                        <!-- Sidebar -->
+                        <div class="col-lg-4 col-12 mt-1">
+
+                            <!-- Section: Featured posts -->
+                            <section class="section widget-content mt-5">
+
+                                <!--  Card -->
+                                <div class="card card-body pb-0">
+                                    {% for popular in popular_posts %}
+                                        <div class="single-post">
+                                            {% if forloop.first %}
+                                                <p class="font-weight-bold dark-grey-text text-center spacing grey lighten-4 py-2 mb-4">
+                                                    <strong>POPULAR POSTS</strong>
+                                                </p>
+                                            {% endif %}
+                                            <div class="row mb-4">
+                                                <div class="col-5">
+
+                                                    <!-- Image -->
+                                                    <div class="view overlay">
+                                                        <img src="
+
+
+
+
+
+
+                                                                {% if popular.images %}{{ popular.images.url }}{% else %}{{ no_image }}{% endif %}"
+                                                             class="img-fluid z-depth-1 rounded-0" alt="sample image">
+                                                        <a>
+                                                            <div class="mask waves-light waves-effect waves-light"></div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Excerpt -->
+                                                <div class="col-7">
+                                                    <h6 class="mt-0 font-small">
+                                                        <a href="{% url 'blog_detail_view' popular.slug %}">
+                                                            <strong>{{ popular.title }}</strong>
+                                                        </a>
+                                                    </h6>
+
+                                                    <div class="post-data">
+                                                        <p class="font-small grey-text mb-0">
+                                                            <i class="far fa-clock-o"></i> {{ popular.create_time|timesince }}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <!--  Excerpt -->
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </section>
+                            <!--  Section: Featured posts -->
+
+                            <!-- Projects -->
+                            <section class="archive my-5">
+
+                                <!--  Card -->
+                                <div class="card card-body pb-0">
+
+                                    <div class="single-post">
+
+                                        <p class="font-weight-bold dark-grey-text text-center spacing grey lighten-4 py-2 mb-4">
+                                            <strong>PROJECTS</strong>
+                                        </p>
+
+                                        <!-- Grid row -->
+                                        <div class="row mb-4">
+
+                                            <!-- Grid column -->
+                                            <div class="col-md-12 text-center">
+
+                                                <!-- List -->
+                                                <ul class="list-unstyled">
+                                                    {% for project in projects %}
+                                                        <li>
+                                                            <p class="mb-1">
+                                                                <a href="{% url 'gallery' project.slug %}"
+                                                                   class="dark-grey-text">{{ project.title }}</a>
+                                                            </p>
+                                                        </li>
+                                                    {% endfor %}
+
+                                                </ul>
+                                                <!-- List -->
+
+                                            </div>
+                                            <!-- Grid column -->
+
+                                        </div>
+                                        <!-- Grid row -->
+
+                                    </div>
+
+                                </div>
+                                <!--  Card -->
+
+                            </section>
+                            <!-- Archive -->
+
+                        </div>
+                    </div>
+                </div>
+            {% endblock %}
         </div>
     </section>
 </main>

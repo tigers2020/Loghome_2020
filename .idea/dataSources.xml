@@ -15,5 +15,26 @@
         </library>
       </libraries>
     </data-source>
+    <data-source source="LOCAL" name="Django default" uuid="36f15cf2-1613-4fd5-bac4-b794e7de62af">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/Loghome_2020/settings.py</remarks>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\hyper\PycharmProjects\Loghome_2020\db.sqlite3</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="@localhost" uuid="be8d11c6-b621-4b62-98fb-9e1e53f3db73">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <remarks>mysql</remarks>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="loghomecrew$loghome@loghomecrew.mysql.pythonanywhere-services.com" uuid="acdf5c5b-8c66-4a31-a6d7-583625d0826a">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://loghomecrew.mysql.pythonanywhere-services.com:3306/loghomecrew$loghome</jdbc-url>
+    </data-source>
   </component>
 </project>

@@ -5,7 +5,7 @@ from django.shortcuts import HttpResponse
 from django.views.generic import ListView, TemplateView, FormView
 from django.views import generic
 from django.contrib.messages.views import SuccessMessageMixin
-from Gallery.models import Project
+from Gallery.models import Project, HomeImage
 from Post.models import Post
 from .forms import ContactForm
 
@@ -25,20 +25,28 @@ class MainIndex(generic.TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context = initiate_context(context)
+        context['popular_posts'] = Post.objects.filter(category__slug='blog').order_by('-hit_count')
+        context['projects'] = Project.objects.filter(status=4)[:5]
+        context['welcome'] = Post.objects.get(slug='welcome')
+
+        images = []
+        for project in Project.objects.all():
+            images.append( HomeImage.objects.filter(project__slug=project.slug).first())
+        context['images'] = images
+
         return context
 
 
 #
 class AboutUsView(generic.ListView):
     model = Post
-    template_name = 'about_us.html'
+    template_name = 'Post/about_us.html'
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
         context = initiate_context(context)
         context['about_us'] = Post.objects.get(slug='about-us')
         context['faqs'] = Post.objects.filter(category__slug='faq')
-        context['timeline'] = ""
         return context
 
 
@@ -78,7 +86,6 @@ class ContactView(generic.FormView):
         context = initiate_context(context)
 
         return context
-
 
 
 class SuccessView(generic.TemplateView):
