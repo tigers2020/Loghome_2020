@@ -97,17 +97,27 @@ WSGI_APPLICATION = 'Loghome_2020.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # },
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    },
-    # 'mysql': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': env('NAME'),
+        'USER': env('USER'),
+        'PASSWORD': env('PASSWORD'),
+        'HOST': env('HOST'),
+        'PORT': '3306',
+        'TIME_ZONE': None,
+    }
+    # 'default': {
     #     'ENGINE': 'django.db.backends.mysql',
-    #     'NAME': 'loghomecrew',
+    #     'NAME': 'loghome',
     #     'USER': 'root',
-    #     'PASSWORD': '',
+    #     'PASSWORD': '1548510q',
     #     'HOST': 'localhost',
     #     'PORT': '3306',
+    #     'TIME_ZONE': None,
     # }
 }
 
@@ -150,10 +160,10 @@ STATIC_URL = '/static_files/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static_files'),
 ]
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'statics_cdn')
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'Loghome_2020/statics_cdn')
 
 MEDIA_URL = '/media_files/'
-MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'media_cdn')
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'Loghome_2020/media_cdn')
 
 # CKEditor Configs
 
