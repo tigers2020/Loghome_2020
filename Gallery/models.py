@@ -49,7 +49,7 @@ class Project(models.Model):
     slug = models.SlugField(blank=True, null=True)
     provider = models.ForeignKey(Provider, on_delete=models.CASCADE)
     location = models.ForeignKey(City, on_delete=models.CASCADE)
-    project_date = models.DateField()
+    project_date = models.DateTimeField()
     status = models.IntegerField(choices=settings.STATUS, default=0)
     h_first_floor_sq_ft = models.FloatField(default=0)
     h_second_floor_sq_ft = models.FloatField(default=0)
@@ -80,7 +80,7 @@ def get_image_location(instance, filename):
 class HomeImage(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     image = ImageField(upload_to=get_image_location, verbose_name='Image')
-    date_taken = models.DateField(blank=True, editable=False)
+    date_taken = models.DateTimeField(blank=True, editable=False)
     description = RichTextField(blank=True, null=True)
     status = models.IntegerField(choices=settings.STATUS, default=0)
 

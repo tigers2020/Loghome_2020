@@ -107,9 +107,8 @@ DATABASES = {
         'USER': env('USER'),
         'PASSWORD': env('PASSWORD'),
         'HOST': env('HOST'),
-        'PORT': '3306',
-        'TIME_ZONE': None,
-    }
+        'PORT': '',
+    },
     # 'default': {
     #     'ENGINE': 'django.db.backends.mysql',
     #     'NAME': 'loghome',
