@@ -31,7 +31,7 @@ class MainIndex(generic.TemplateView):
 
         images = []
         for project in Project.objects.all():
-            images.append( HomeImage.objects.filter(project__slug=project.slug).first())
+            images.append(HomeImage.objects.filter(project__slug=project.slug).first())
         context['images'] = images
 
         return context
@@ -57,7 +57,7 @@ class ContactView(generic.FormView):
 
     def form_valid(self, form):
         if self.send_mail(form.cleaned_data):
-            self.success = "You have successfully submitted. We will contact you in short time."
+            self.success = True
 
         return super(ContactView, self).form_valid(form)
 

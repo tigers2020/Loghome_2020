@@ -101,23 +101,23 @@ DATABASES = {
     #     'ENGINE': 'django.db.backends.sqlite3',
     #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     # },
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': env('NAME'),
-        'USER': env('USER'),
-        'PASSWORD': env('PASSWORD'),
-        'HOST': env('HOST'),
-        'PORT': '',
-    },
     # 'default': {
     #     'ENGINE': 'django.db.backends.mysql',
-    #     'NAME': 'loghome',
-    #     'USER': 'root',
-    #     'PASSWORD': '1548510q',
-    #     'HOST': 'localhost',
-    #     'PORT': '3306',
-    #     'TIME_ZONE': None,
-    # }
+    #     'NAME': env('NAME'),
+    #     'USER': env('USER'),
+    #     'PASSWORD': env('PASSWORD'),
+    #     'HOST': env('HOST'),
+    #     'PORT': '',
+    # },
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'loghome',
+        'USER': 'root',
+        'PASSWORD': '1548510q',
+        'HOST': 'localhost',
+        'PORT': '3306',
+        'TIME_ZONE': None,
+    }
 }
 
 # Password validation
