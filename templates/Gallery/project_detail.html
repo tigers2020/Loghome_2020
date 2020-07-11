@@ -9,9 +9,9 @@
             <!--Slides-->
             <div class="carousel-inner" role="listbox">
                 {% for image in images %}
-                    <div class="carousel-item {% if forloop.first %}active{% endif %} ">
-                        <img class="d-block w-100" style="max-height: 500px" src="{{ image.image.url }}"
-                             alt="{{ forloop.counter0 }}">
+                    <div class="carousel-item {% if forloop.first %}active{% endif %}" style="height: 500px">
+                        <img class="d-block w-100" src="{{ image.image.url }}"
+                             alt="{{ forloop.counter0 }}" style="position: absolute; bottom: 50;">
                     </div>
                 {% endfor %}
             </div>
@@ -93,7 +93,7 @@
                         {% for key, value in specs.items %}
                             {% if 'h_' in key %}
                                 <tr>
-                                    {% load clean_text %}
+                                    {% load custom_tags %}
                                     {% if key == "h_price" %}
                                         <th scope="row">{{ key|clean:'h_'|clean:'_' }}</th>
                                         <td class="pl-5 font-weight-bold">Approximately ${{ value }}</td>

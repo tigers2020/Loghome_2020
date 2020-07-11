@@ -15,10 +15,9 @@
                     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                             {% for image in images %}
-                                <div class="carousel-item {% if forloop.first %}active{% endif %}"
-                                     style="height: 500px">
+                                <div class="carousel-item {% if forloop.first %}active{% endif %}" style="height: 500px">
                                     <img class="d-block w-100" src="{{ image.image.url }}" alt="{{ image.image.title }}"
-                                         />
+                                         style="position: absolute; bottom: -10%;"/>
                                 </div>
                             {% endfor %}
                         </div>
