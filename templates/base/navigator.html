@@ -1,7 +1,7 @@
 <!-- Navigation -->
 <header>
     <!-- Navbar -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light scrolling-navbar white">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light white">
         <div class="container-fluid justify-content-center align-items-center">
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
@@ -9,18 +9,16 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent-4">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav mx-auto">
                     <li class="nav-item dropdown ml-4 mb-0">
                         <a class="nav-link waves-effect waves-light font-weight-bold text-uppercase" href="{% url 'home' %}">Home
                         </a>
                     </li>
                     <li class="nav-item dropdown mega-dropdown ml-4 mb-0">
-                        <a class="nav-link dropdown-toggle text-uppercase font-weight-bold" id="galleryDropdownMegaLink"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gallery
-
-                        </a>
-                        <div class="dropdown-menu mega-menu py-5 px-3"
-                             aria-labelledby="galleryDropdownMegaLink">
+                        <a class="nav-link dropdown-toggle text-uppercase font-weight-bold"
+                           id="galleryDropdownMegaLink"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gallery</a>
+                        <div class="dropdown-menu mega-menu v-3 z-depth-1 py-5 px-3" aria-labelledby="galleryDropdownMegaLink">
                             <div class="row">
                                 {% for menu in gallery %}
                                     {% if forloop.first %}
@@ -45,19 +43,8 @@
                             </div>
                         </div>
                     </li>
-                    {#                    <li class="nav-item dropdown ml-4  mb-0">#}
-                    {#                        <a class="nav-link dropdown-toggle waves-effect waves-light font-weight-bold"#}
-                    {#                           id="navbarDropdownMenuLink-2" data-toggle="dropdown" aria-haspopup="true"#}
-                    {#                           aria-expanded="false"> Gallery </a>#}
-                    {#                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink-2">#}
-                    {#                            {% for menu in gallery %}#}
-                    {#                                #}
-                    {#                                <a class="dropdown-item waves-effect waves-light"#}
-                    {#                                   href="{% url 'gallery' menu.slug %}">{{ menu.title }}</a>#}
-                    {#                            {% endfor %}#}
-                    {#                        </div>#}
-                    {#                    </li>#}
-                    <li class="nav-item dropdown ml-4  mb-0">
+
+                    <li class="nav-item ml-4  mb-0">
                         <a class="nav-link waves-effect waves-light font-weight-bold" href="{% url 'about-us' %}">ABOUT
                             US</a>
 
