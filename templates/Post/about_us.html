@@ -25,8 +25,8 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="p-3">
-                        <img src="{{ about_us.images.url }}" alt="{{ about_us.slug }}" class="w-100"/>
-                            </div>
+                            <img src="{{ about_us.images.url }}" alt="{{ about_us.slug }}" class="w-100"/>
+                        </div>
                     </div>
                     <div class="col-md-8">
                         <div class="card-text p-3">{{ about_us.content|safe }}</div>
@@ -43,8 +43,10 @@
                         <div class="card border-top border-bottom-0 border-left border-right border-light">
 
                             <!-- Card header -->
-                            <div class="card-header border-bottom border-light" role="tab" id="headingOne{{ forloop.counter0 }}">
-                                <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne{{ forloop.counter0 }}"
+                            <div class="card-header border-bottom border-light" role="tab"
+                                 id="headingOne{{ forloop.counter0 }}">
+                                <a data-toggle="collapse" data-parent="#accordionEx"
+                                   href="#collapseOne{{ forloop.counter0 }}"
                                    aria-expanded="true"
                                    aria-controls="collapseOne1">
                                     <h5 class="black-text font-weight-normal mb-0">
@@ -55,10 +57,11 @@
                             </div>
 
                             <!-- Card body -->
-                            <div id="collapseOne{{ forloop.counter0 }}" class="collapse" role="tabpanel" aria-labelledby="headingOne{{ forloop.counter0 }}"
+                            <div id="collapseOne{{ forloop.counter0 }}" class="collapse" role="tabpanel"
+                                 aria-labelledby="headingOne{{ forloop.counter0 }}"
                                  data-parent="#accordionEx">
                                 <div class="card-body">
-                                    {{ faq.content|safe}}
+                                    {{ faq.content|safe }}
                                 </div>
                             </div>
 
@@ -70,9 +73,79 @@
                 </div>
                 <!-- Accordion wrapper -->
             </div>
-            <div class="tab-pane fade" id="map_md" role="tabpanel" aria-labelledby="map_md">
-                <p>Maps</p>
+            <div class="tab-pane fade text-center" id="map_md" role="tabpanel" aria-labelledby="map_md"
+                 style="height: 600px">
+                <div class="warning-color">To protect your privacy, we only share the city location.</div>
+                <div id="us-map" class="w-100" style="height: 500px"></div>
+
             </div>
         </div>
     </div>
+{% endblock %}
+{% load static %}
+{% block custom_css %}
+
+{% endblock %}
+{% block custom_js %}
+    <script>
+        var labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        var labelIndex = 0;
+        var locations = [
+            {% for project in projects %}
+                ['{{ project.title }}', {{ project.location.lat }}, {{ project.location.lng }}, '{{ project.location.city }}', '{{ project.slug }}', `{{ project.description|safe }}`],
+            {% endfor %}
+        ];
+
+        // Initialize and add the map
+        function initMap() {
+            var home = {lat: 40.74838, lng: -73.996705}
+            var map = new google.maps.Map(
+                document.getElementById('us-map'), {zoom: 5, center: home});
+
+            setMarkers(map, locations);
+        }
+
+
+        function setMarkers(map, locations) {
+            var marker, i;
+            var prev_infowindow = false;
+            for (i = 0; i < locations.length; i++) {
+                var title = locations[i][0];
+                var lat = locations[i][1];
+                var lng = locations[i][2];
+                var city = locations[i][3];
+                var url = locations[i][4];
+                var description = locations[i][5];
+
+                latlngset = new google.maps.LatLng(lat, lng);
+
+                var marker = new google.maps.Marker({
+                    map: map, title: title, position: latlngset,
+                    label: labels[labelIndex++ % labels.length],
+                });
+                map.setCenter(marker.getPosition())
+
+                var content = `<h5><a href='/gallery/${url}'>${title}</a></h5>` +
+                    `<p>${description}</p>`;
+
+                var infowindow = new google.maps.InfoWindow();
+
+                google.maps.event.addListener(marker, 'click', (function (marker, content, infowindow) {
+                    return function () {
+                        if (prev_infowindow) {
+                            prev_infowindow.close()
+                        }
+                        prev_infowindow = infowindow;
+                        infowindow.setContent(content);
+                        infowindow.open(map, marker);
+                    };
+
+                })(marker, content, infowindow));
+            }
+
+        }
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2fpgcGKKKtI351uwTAIJFmL88EENx9lE&callback=initMap"
+            type="text/javascript"></script>
 {% endblock %}

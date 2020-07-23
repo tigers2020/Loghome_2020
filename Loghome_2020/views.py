@@ -46,6 +46,7 @@ class AboutUsView(generic.ListView):
         context = super().get_context_data(**kwargs)
         context = initiate_context(context)
         context['about_us'] = Post.objects.get(slug='about-us')
+        context['projects'] = Project.objects.filter(status=4)
         context['faqs'] = Post.objects.filter(category__slug='faq')
         return context
 
